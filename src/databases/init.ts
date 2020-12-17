@@ -32,13 +32,18 @@ export default class DatabaseInit {
         quantity_available integer,
         image_url text
       );`,
+      `CREATE TABLE IF NOT EXISTS cart (
+        id integer primary key autoincrement,
+        product_id text not null,
+        quantity integer not null
+      );`
     ];
 
     products.map((product: any) => {
       if (!product.price) {
         return
       }
-      
+
       sql.push(`
         INSERT INTO
           products (
