@@ -38,9 +38,9 @@ function ProductsPage() {
           paddingBottom: 16,
         }}
       >
-        {products.map((product: Product) => {
-          return <ProductCardComponent key={product.id} {...product} />;
-        })}
+        {products.map((product: Product) => (
+          <ProductCardComponent key={product.id} {...product} />
+        ))}
       </ScrollView>
     </View>
   );
